@@ -13,6 +13,9 @@ import { extendedTheme } from 'chalkui/dist/cjs'
 const theme = extendedTheme({
    colors: {
       black: '#16161D',
+      gray: {
+         100: '#f9f9f9'
+      }
    },
    // fonts,
    // breakpoints,

@@ -5,10 +5,10 @@ import "nprogress/nprogress.css"
 import { Provider }      from 'react-redux'
 import type { AppProps } from 'next/app'
 
-import store             from '../app/store'
+import store             from '../store'
 import {
    ChalkProvider,
-} from 'chalkui/dist/cjs'
+} from 'chalkui/dist/cjs/React'
 import theme             from '../theme'
 
 
@@ -18,7 +18,7 @@ Router.events.on("routeChangeStart", () => {
 Router.events.on("routeChangeComplete", () => NProgress.done())
 Router.events.on("routeChangeError", () => NProgress.done())
 
-function App({ Component, pageProps }: AppProps) {
+export default ({ Component, pageProps }: AppProps) => {
    return (
       <Provider store={store}>
          <ChalkProvider resetCSS theme={theme}>
@@ -27,5 +27,3 @@ function App({ Component, pageProps }: AppProps) {
       </Provider>
    )
 }
-
-export default App
